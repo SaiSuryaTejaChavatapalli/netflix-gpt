@@ -1,26 +1,39 @@
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { addUser, removeUser } from "../utils/userSlice";
+import { mainLogo } from "../utils/constants";
 const Header = () => {
   const user = useSelector((store) => store.user);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const handleSignOut = () => {
     signOut(auth)
-      .then(() => {
-        navigate("/");
-      })
+      .then(() => {})
       .catch((error) => {
         // An error happened.
       });
   };
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        const { uid, displayName, email, photoURL } = user;
+        console.log("OnAuthChanged", { uid, displayName, email, photoURL });
+        dispatch(addUser({ uid, displayName, email, photoURL }));
+        navigate("/browse");
+      } else {
+        dispatch(removeUser());
+        navigate("/");
+      }
+    });
+    return () => unsubscribe();
+  }, []);
   return (
     <div className="absolute py-2 px-8 bg-gradient-to-b from-black z-10 text-white w-screen flex justify-between">
-      <img
-        src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
-        alt="logo-img"
-        className="w-44"
-      />
+      <img src={mainLogo} alt="logo-img" className="w-44" />
       {user && (
         <div className="flex items-center">
           <img

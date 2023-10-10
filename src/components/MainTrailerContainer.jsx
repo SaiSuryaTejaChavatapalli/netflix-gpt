@@ -6,11 +6,11 @@ const MainTrailerContainer = () => {
   const { data } = useNowPlayingMovies();
   if (!data) return;
   const trailerMovie = data[0];
-  const { original_title, overview } = trailerMovie;
+  const { original_title, overview, id } = trailerMovie;
   return (
-    <div className="py-40 px-16">
+    <div className="py-20">
       <MainTrailerTitle title={original_title} description={overview} />
-      <MainTrailerBackground />
+      <MainTrailerBackground movieId={id} />
     </div>
   );
 };

@@ -3,7 +3,6 @@ import Header from "./Header";
 import MainTrailerContainer from "./MainTrailerContainer";
 import MovieCardsContainer from "./MovieCardsContainer";
 const Browse = () => {
-  const data = useNowPlayingMovies();
   return (
     <div>
       <Header />

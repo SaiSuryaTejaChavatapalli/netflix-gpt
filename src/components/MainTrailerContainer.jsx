@@ -8,7 +8,7 @@ const MainTrailerContainer = () => {
   const trailerMovie = data[0];
   const { original_title, overview, id } = trailerMovie;
   return (
-    <div className="py-20">
+    <div className="pt-20">
       <MainTrailerTitle title={original_title} description={overview} />
       <MainTrailerBackground movieId={id} />
     </div>

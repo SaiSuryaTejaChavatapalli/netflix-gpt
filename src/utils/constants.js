@@ -15,3 +15,14 @@ export const getApiOptions = {
 
 export const nowPlayingAPI =
   "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
+
+export const popularMoviesAPI =
+  "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
+
+export const topRatedMoviesAPI =
+  "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
+
+export const upcomingMoviesAPI =
+  "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
+
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/original";

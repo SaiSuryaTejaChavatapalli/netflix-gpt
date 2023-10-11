@@ -29,3 +29,22 @@ export const IMG_CDN_URL = "https://image.tmdb.org/t/p/original";
 
 export const BG_IMG_URL =
   "http://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY.jpg";
+
+export const Supported_languages = [
+  {
+    identifier: "en",
+    name: "English",
+  },
+  {
+    identifier: "telugu",
+    name: "Telugu",
+  },
+  {
+    identifier: "hindi",
+    name: "Hindi",
+  },
+  {
+    identifier: "spanish",
+    name: "Spanish",
+  },
+];

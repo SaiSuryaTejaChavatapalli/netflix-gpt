@@ -10,7 +10,7 @@ import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { defaultUserAvatar } from "../utils/constants";
+import { BG_IMG_URL, defaultUserAvatar } from "../utils/constants";
 const Login = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -80,10 +80,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="http://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY.jpg"
-          alt="login-bg"
-        />
+        <img src={BG_IMG_URL} alt="login-bg" />
 
         <form
           onSubmit={(e) => e.preventDefault()}

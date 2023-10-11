@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
 import { mainLogo } from "../utils/constants";
+import { toggleGptSearch } from "../utils/gptSlice";
 const Header = () => {
   const user = useSelector((store) => store.user);
   const dispatch = useDispatch();
@@ -16,7 +17,9 @@ const Header = () => {
         // An error happened.
       });
   };
-
+  const handleToggleGptSearch = () => {
+    dispatch(toggleGptSearch());
+  };
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -36,6 +39,12 @@ const Header = () => {
       <img src={mainLogo} alt="logo-img" className="w-44" />
       {user && (
         <div className="flex items-center">
+          <button
+            className="bg-purple-600 rounded-lg text-white p-2"
+            onClick={handleToggleGptSearch}
+          >
+            GPT Search
+          </button>
           <img
             src={user?.photoURL}
             alt="profile-icon"

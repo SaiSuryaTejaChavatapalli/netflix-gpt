@@ -8,8 +8,7 @@ export const getApiOptions = {
   method: "GET",
   headers: {
     accept: "application/json",
-    // Authorization: `Bearer ${import.meta.env.VITE_MOVIEDB_KEY}`,
-    Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwODk4ZWY1MDU4NGQ5OWM4MjYxZDRlOTAwZjhlM2IxOSIsInN1YiI6IjY1MjU1NDExODNlZTY3MDEzYjdlMDAzYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LSRyTVMmjZ6n3zBdE72KVTz5hHg11m1iT8B7q9svPuI"}`,
+    Authorization: `Bearer ${import.meta.env.VITE_MOVIEDB_KEY}`,
   },
 };
 

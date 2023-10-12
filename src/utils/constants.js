@@ -8,7 +8,8 @@ export const getApiOptions = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization: `Bearer ${import.meta.env.VITE_MOVIEDB_KEY}`,
+    // Authorization: `Bearer ${import.meta.env.VITE_MOVIEDB_KEY}`,
+    Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwODk4ZWY1MDU4NGQ5OWM4MjYxZDRlOTAwZjhlM2IxOSIsInN1YiI6IjY1MjU1NDExODNlZTY3MDEzYjdlMDAzYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.LSRyTVMmjZ6n3zBdE72KVTz5hHg11m1iT8B7q9svPuI"}`,
   },
 };
 
@@ -24,7 +25,11 @@ export const topRatedMoviesAPI =
 export const upcomingMoviesAPI =
   "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
 
-export const IMG_CDN_URL = "https://image.tmdb.org/t/p/original";
+export const setMovieToMovieDetails = (movieId) => {
+  return `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`;
+};
+
+export const IMG_CDN_URL = "https://image.tmdb.org/t/p/original/";
 
 export const BG_IMG_URL =
   "http://cdn.mos.cms.futurecdn.net/rDJegQJaCyGaYysj2g5XWY.jpg";

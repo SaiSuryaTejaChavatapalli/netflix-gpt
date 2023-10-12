@@ -1,10 +1,13 @@
+import { Link } from "react-router-dom";
 import { IMG_CDN_URL } from "../../utils/constants";
 
-const MovieCard = ({ posterPath }) => {
+const MovieCard = ({ movieDetails }) => {
   return (
-    <div className="w-36 md:w-48 pr-4">
-      <img src={IMG_CDN_URL + posterPath} alt="movie-card" />
-    </div>
+    <Link to={`/browse/movieDetails/${movieDetails.id}`}>
+      <div className="w-36 md:w-48 pr-4">
+        <img src={IMG_CDN_URL + movieDetails.poster_path} alt="movie-card" />
+      </div>
+    </Link>
   );
 };
 

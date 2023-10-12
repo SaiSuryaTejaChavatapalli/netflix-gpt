@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { lang } from "../../utils/languageConstants";
-import { openai } from "../../utils/openAI";
+// import { openai } from "../../utils/openAI";
 import { useRef } from "react";
 const GptSearchBar = () => {
   const language = useSelector((store) => store.config.language);
@@ -9,12 +9,12 @@ const GptSearchBar = () => {
     const gptSearchText = gptSearchInput.current.value;
     console.log(gptSearchText);
     const prompt = `Act as a movie recommendation system and suggest some movies for the query:"${gptSearchText}" only give names of 5 movies, comma separated like example ahead Ex:Bahubali,Mission Impossible,Jawan,James Bond,Don`;
-    const chatCompletion = await openai.chat.completions.create({
-      messages: [{ role: "user", content: prompt }],
-      model: "gpt-3.5-turbo",
-    });
+    // const chatCompletion = await openai.chat.completions.create({
+    //   messages: [{ role: "user", content: prompt }],
+    //   model: "gpt-3.5-turbo",
+    // });
 
-    console.log(chatCompletion.choices);
+    // console.log(chatCompletion.choices);
   };
   return (
     <div className="flex items-center justify-center pt-[35%] md:pt-[8%]">

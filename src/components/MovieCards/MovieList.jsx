@@ -1,10 +1,9 @@
 import MovieCard from "./MovieCard";
 
 const MovieList = ({ listHeading, movieList }) => {
-  console.log(movieList);
   return (
     <div className="p-2 text-white">
-      <h1 className="text-2xl">{listHeading}</h1>
+      <h1 className="text-lg md:text-3xl">{listHeading}</h1>
       <div className="flex overflow-x-scroll py-2">
         <div className="flex gap-1">
           {movieList?.map((movie) => (

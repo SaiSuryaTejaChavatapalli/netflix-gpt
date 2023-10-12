@@ -41,8 +41,8 @@ const Header = () => {
     return () => unsubscribe();
   }, []);
   return (
-    <div className="absolute px-8 bg-gradient-to-b from-black z-10 text-white w-screen flex justify-between">
-      <img src={mainLogo} alt="logo-img" className="w-44" />
+    <div className="absolute px-8 bg-gradient-to-b from-black z-10 text-white w-screen flex flex-col md:flex-row justify-between">
+      <img src={mainLogo} alt="logo-img" className="w-44 mx-auto md:mx-0" />
       {user && (
         <div className="flex items-center">
           {gptSearchState && (

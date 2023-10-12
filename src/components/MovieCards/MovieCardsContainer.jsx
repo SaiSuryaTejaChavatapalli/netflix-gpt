@@ -1,7 +1,7 @@
-import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
-import usePopularMovies from "../hooks/usePopularMovies";
-import useTopRatedMovies from "../hooks/useTopRatedMovies";
-import useUpcomingMovies from "../hooks/useUpcomingMovies";
+import useNowPlayingMovies from "../../hooks/useNowPlayingMovies";
+import usePopularMovies from "../../hooks/usePopularMovies";
+import useTopRatedMovies from "../../hooks/useTopRatedMovies";
+import useUpcomingMovies from "../../hooks/useUpcomingMovies";
 import MovieList from "./MovieList";
 
 const MovieCardsContainer = () => {
@@ -12,7 +12,7 @@ const MovieCardsContainer = () => {
 
   return (
     <div className="bg-black">
-      <div className="-mt-52 relative z-20 pl-12">
+      <div className="mt-0 md:-mt-52 relative z-20 pl-4 md:pl-12">
         <MovieList
           listHeading={"Now Playing"}
           movieList={nowPlayingMoviesList}

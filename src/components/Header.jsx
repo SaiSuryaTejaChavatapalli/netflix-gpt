@@ -63,12 +63,12 @@ const Header = () => {
             className="bg-purple-600 rounded-lg text-white p-2"
             onClick={handleToggleGptSearch}
           >
-            {gptSearchState ? "Home" : "GPT Search"}
+            {gptSearchState ? "Home" : "Search Movies"}
           </button>
           <img
             src={user?.photoURL}
             alt="profile-icon"
-            className="w-12 h-12 py-2 mx-2"
+            className="w-12 h-12 py-2 mx-2 rounded-lg"
           />
           <h3 className="cursor-pointer font-bold" onClick={handleSignOut}>
             (SignOut)

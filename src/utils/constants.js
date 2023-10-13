@@ -23,6 +23,10 @@ export const topRatedMoviesAPI =
 export const upcomingMoviesAPI =
   "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1";
 
+export const setMovieQuerySearch = (movieQuery) => {
+  return `https://api.themoviedb.org/3/search/movie?query=${movieQuery}&include_adult=false&language=en-US&page=1`;
+};
+
 export const setMovieToMovieDetails = (movieId) => {
   return `https://api.themoviedb.org/3/movie/${movieId}?language=en-US`;
 };

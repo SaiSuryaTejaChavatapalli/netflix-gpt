@@ -1,21 +1,17 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { lang } from "../../utils/languageConstants";
-import { openai } from "../../utils/openAI";
+// import { openai } from "../../utils/openAI";
 import { useRef } from "react";
+import { searchMovieTMDB } from "./searchMovieTMDB";
+import { addUserSearchMovies } from "../../utils/moviesSlice";
 const GptSearchBar = () => {
   const language = useSelector((store) => store.config.language);
+  const dispatch = useDispatch();
   const gptSearchInput = useRef();
   const handleGptSearch = async () => {
     const gptSearchText = gptSearchInput.current.value;
-    console.log(gptSearchText);
-    const prompt = `Act as a movie recommendation system and suggest some movies for the query:"${gptSearchText}" only give names of 5 movies, comma separated like example ahead Ex:Bahubali,Mission Impossible,Jawan,James Bond,Don`;
-    console.log("Prompt", prompt);
-    const chatCompletion = await openai.chat.completions.create({
-      messages: [{ role: "user", content: prompt }],
-      model: "gpt-3.5-turbo",
-    });
-
-    console.log(chatCompletion.choices);
+    const resultMovies = await searchMovieTMDB(gptSearchText);
+    dispatch(addUserSearchMovies(resultMovies));
   };
   return (
     <div className="flex items-center justify-center pt-[35%] md:pt-[8%]">

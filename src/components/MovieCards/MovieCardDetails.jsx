@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import useMovieDetails from "../../hooks/useMovieDetails";
 import { IMG_CDN_URL } from "../../utils/constants";
 import InfoCard from "./InfoCard";
-
+import dummyMovieCard from "../../images/dummyMovieCard.jpg";
 const MovieCardDetails = () => {
   const { movieId } = useParams();
   const { data: movieDetails } = useMovieDetails(movieId);
@@ -10,12 +10,20 @@ const MovieCardDetails = () => {
 
   return (
     <div className="flex flex-col md:flex-row bg-black md:min-h-screen">
-      <div className="w-full md:w-2/5 border border-gray-700 py-3 px-0">
-        <img
-          src={IMG_CDN_URL + movieDetails?.poster_path}
-          alt="poster"
-          className="rounded-lg mx-10 h-screen"
-        />
+      <div className="w-full md:w-2/5 border border-gray-700 py-3 pr-20">
+        {movieDetails?.poster_path ? (
+          <img
+            src={IMG_CDN_URL + movieDetails?.poster_path}
+            alt="poster"
+            className="rounded-lg mx-10 h-screen"
+          />
+        ) : (
+          <img
+            src={dummyMovieCard}
+            alt="poster"
+            className="rounded-lg mx-10 h-screen"
+          />
+        )}
       </div>
       <div className="w-full md:w-3/5 text-white p-5">
         <div className="flex flex-col items-center gap-7">

@@ -9,7 +9,11 @@ const MainTrailerContainer = () => {
   const { original_title, overview, id } = trailerMovie;
   return (
     <div className="pt-[30%] bg-black md:pt-0">
-      <MainTrailerTitle title={original_title} description={overview} />
+      <MainTrailerTitle
+        title={original_title}
+        description={overview}
+        movieId={id}
+      />
       <MainTrailerBackground movieId={id} />
     </div>
   );

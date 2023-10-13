@@ -1,15 +1,7 @@
 import { useParams } from "react-router-dom";
 import useMovieDetails from "../../hooks/useMovieDetails";
 import { IMG_CDN_URL } from "../../utils/constants";
-
-const InfoCard = ({ heading, description }) => {
-  return (
-    <div className="border border-red-800 shadow-lg p-4 rounded-lg hover:scale-110 transition duration-500 cursor-pointer object-cover bg-red-700 text-white font-semibold w-32">
-      <div>{heading}</div>
-      <div className="break-words">{description}</div>
-    </div>
-  );
-};
+import InfoCard from "./InfoCard";
 
 const MovieCardDetails = () => {
   const { movieId } = useParams();
@@ -75,7 +67,7 @@ const MovieCardDetails = () => {
           </div>
           <div></div>
           <div>
-            <div className="font-semibold">
+            <div className="font-semibold underline">
               <a
                 href={`https://www.imdb.com/title/${movieDetails?.imdb_id}`}
                 target="_blank"

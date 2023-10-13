@@ -11,7 +11,6 @@ export const getApiOptions = {
     Authorization: `Bearer ${import.meta.env.VITE_MOVIEDB_KEY}`,
   },
 };
-
 export const nowPlayingAPI =
   "https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1";
 

@@ -1,4 +1,5 @@
-const MainTrailerTitle = ({ title, description }) => {
+import { Link } from "react-router-dom";
+const MainTrailerTitle = ({ title, description, movieId }) => {
   return (
     <div className="absolute bg-gradient-to-r from-black text-white py-16 md:py-40 px-8 w-screen aspect-video ">
       <h1 className="text-2xl md:text-6xl font-bold">{title}</h1>
@@ -9,9 +10,11 @@ const MainTrailerTitle = ({ title, description }) => {
         <button className="bg-white text-md md:text-2xl text-black px-1 md:px-6 py-1 md:py-4 rounded-lg mr-2">
           ▶ Play
         </button>
-        <button className="bg-gray-500 text-md md:text-2xl text-white px-1 md:px-6 py-1 md:py-4 rounded-lg">
-          More Info
-        </button>
+        <Link to={`/browse/movieDetails/${movieId}`}>
+          <button className="bg-gray-500 text-md md:text-2xl text-white px-1 md:px-6 py-1 md:py-4 rounded-lg">
+            More Info
+          </button>
+        </Link>
       </div>
     </div>
   );

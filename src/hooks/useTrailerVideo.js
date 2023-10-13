@@ -17,7 +17,7 @@ const useTrailerVideo = (movieId) => {
   });
   if (!data) return;
   const filteredData = data?.filter((movie) => movie.type === "Trailer");
-  const trailerVideo = filteredData.length ? filteredData[0] : data[0];
+  const trailerVideo = filteredData?.length ? filteredData[0] : data[0];
   return trailerVideo;
 };
 

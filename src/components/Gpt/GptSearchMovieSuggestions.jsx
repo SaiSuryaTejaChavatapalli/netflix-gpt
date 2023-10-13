@@ -6,11 +6,12 @@ const GptSearchMovieSuggestions = () => {
     (store) => store.movies.userSearchMovies
   );
   console.log("userSearchMovies", userSearchMovies);
-  if (userSearchMovies.length === 0)
+  if (userSearchMovies?.length === 0)
     return (
       <div className="flex justify-center items-center">
-        <div className="text-red-800 bg-black w-1/3 p-24 text-center text-4xl font-bold rounded-lg">
-          Not Found
+        <div className="text-white bg-black w-full md:w-1/3 p-24 text-center text-4xl font-bold rounded-lg opacity-80">
+          <h1>Oops!</h1>
+          <h3 className="text-xl">Couldn't find movies!!</h3>
         </div>
       </div>
     );

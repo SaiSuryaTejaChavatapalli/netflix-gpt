@@ -1,6 +1,6 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
@@ -43,6 +43,7 @@ const Header = () => {
   return (
     <div className="absolute px-8 bg-gradient-to-b from-black z-10 text-white w-screen flex flex-col md:flex-row justify-between">
       <img src={mainLogo} alt="logo-img" className="w-44 mx-auto md:mx-0" />
+
       {user && (
         <div className="flex items-center">
           {gptSearchState && (

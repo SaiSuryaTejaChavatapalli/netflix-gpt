@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 const MainTrailerTitle = ({ title, description, movieId }) => {
   return (
-    <div className="absolute bg-gradient-to-r from-black text-white py-16 md:py-40 px-8 w-screen aspect-video ">
+    <div className="absolute bg-gradient-to-r from-black text-white py-9 md:py-40 px-8 w-screen aspect-video ">
       <h1 className="text-2xl md:text-6xl font-bold">{title}</h1>
       <p className="text-[8px] md:text-sm md:inline-block w-1/3 md:w-2/6 mt-2">
         {description}

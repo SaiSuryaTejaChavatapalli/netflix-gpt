@@ -15,7 +15,7 @@ const MovieCardDetails = () => {
             <img
               src={IMG_CDN_URL + movieDetails?.poster_path}
               alt="poster"
-              className="rounded-lg mx-10 h-screen"
+              className="rounded-lg mx-10 md:h-screen h-[50vh] w-full object-cover"
             />
           ) : (
             <img
@@ -37,7 +37,7 @@ const MovieCardDetails = () => {
 
             <div className="text-white text-5xl">{movieDetails?.title}</div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex flex-wrap gap-3 mx-3">
               <InfoCard
                 heading="Runtime:"
                 description={movieDetails?.runtime}

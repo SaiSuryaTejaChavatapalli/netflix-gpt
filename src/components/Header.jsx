@@ -1,6 +1,6 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addUser, removeUser } from "../utils/userSlice";
@@ -9,6 +9,7 @@ import { toggleGptSearch } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 const Header = () => {
   const user = useSelector((store) => store.user);
+  console.log("USER", user);
   const gptSearchState = useSelector((store) => store.gpt.gptSearch);
   const dispatch = useDispatch();
   const navigate = useNavigate();
